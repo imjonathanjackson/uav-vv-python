@@ -33,8 +33,7 @@
 - Program control flow
 
 ## Things I don't fully understand yet
-
-[Write these in your own words]
+- How to optimize the inventory system to use a database and create an API to manipulate it.
 
 ## Day 2
 
