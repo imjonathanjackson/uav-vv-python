@@ -67,3 +67,8 @@ Expected: Add
 
 10. Enter invalid menu option
 Expected: error message and return to menu
+
+## Exit
+
+11. Enter Exit menu option
+Expected: Application displays "Goodbye!" then closes gracefully.
