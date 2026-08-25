@@ -1,21 +1,40 @@
-def add(item, inventory):
-    inventory.append(item)
-    print(f" Item # {item} has been added to the inventory system.")
+def add(item):
+    if item:
+        inventory.append(item)
+        print()
+        print(f" Item # {item} has been added to the inventory system.")
+        print()
+    else:
+        print()
+        print("Enter a valid item.")
+        print()
 
-def view(inventory):
-    print("The following items are in the current inventory:")
-    for item in inventory:
-        print(item)
+def display_inventory():
+    print()
+    print("Current inventory:")
+    print()
+    if not inventory:
+        print("There are no items currently in inventory.")
+    else:
+        for item in inventory:
+            print(item)
 
-def search(item, inventory):
+def search(item):
+    print()
     if item in inventory:
         print("Item is in stock.")
     else:
         print("Item is not in stock.")
+    print()
 
-def remove(item, inventory):
+def remove(item):
+    print()
+    if item in inventory:
         inventory.remove(item)
         print(f" {item} has been removed from the inventory system.")
+    else:
+        print("The item does not exist in the inventory system.")
+    print()
 
 def close():
     print()
@@ -23,10 +42,10 @@ def close():
     exit()
 
 inventory = []
+print("Welcome to the Anduril Inventory Management System 1.0")
 
 while(True):
-    print("Welcome to the Anduril Inventory Management System 1.0")
-    print()
+    print()    
     print("1. Add")
     print("2. View inventory.")
     print("3. Search")
@@ -37,16 +56,23 @@ while(True):
 
     match option:
         case '1':
+            print()
             item = input("Provide the item you would like to add to the inventory system: ")
-            add(item, inventory)
+            item.strip().lower()
+            item = item.strip().lower()
+            add(item)
         case '2':
-            view(inventory)
+            display_inventory()
         case '3':
+            print()
             item = input("Please input the item you are searching for: ")
-            search(item, inventory)
+            item = item.strip().lower()
+            search(item)
         case '4':
+            print()
             item = input("Please provide the item you would like to remove from the inventory system: ")
-            remove(item, inventory)
+            item = item.strip().lower() 
+            remove(item)
         case '5':
             close()
         case _:
