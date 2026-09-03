@@ -34,7 +34,7 @@
 
 ## Things I don't fully understand yet
 
-[Write these in your own words]
+How to integrate a SQL database or FASTAPI into this project
 
 ## Day 2
 
